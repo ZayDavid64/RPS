@@ -8,7 +8,37 @@
 </head>
 <body>
     <script>
+        let randomNumber= Math.floor(Math.random()* 3);
+        const playerSelection= prompt("Rock, Paper, or Scissors?", "");
+        let computerSelection = getComputerChoice();
         
+
+        function getComputerChoice(){
+                switch(randomNumber){
+                    case 0: 
+                    return "Rock";
+                    break;
+
+                    case 1:
+                    return "Paper";
+                    break;
+
+                    case 2:
+                    return "Scissors";
+                }
+            }
+
+        function playRound(playerSelection, computerSelection) {
+            
+            if(playerSelection==computerSelection){
+                return "You Win!";
+            }
+            else{
+                return "You Lose" + " It Was " + getComputerChoice();
+            }
+}
+
+alert(playRound(playerSelection, computerSelection));
     </script>
 </body>
 </html>
