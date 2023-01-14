@@ -21,10 +21,12 @@
     <script>
         let playerText= document.querySelector("#playerText")
         let cpuText= document.querySelector("#cpuText")
-        let resultText= document.querySelector("#resultText")
-        let computerSelection = getComputerChoice();
+        let returnext= document.querySelector("#returnext")
+        let computerSelection;
         let playerSelection;
         let result;
+        let playerScore= 0;
+        let computerScore= 0;
         const choiceBtn= document.querySelectorAll("button");
         
 
@@ -34,50 +36,38 @@
             getComputerChoice();
             playerText.textContent= `Player: ${playerSelection}`;
             cpuText.textContent= `CPU: ${computerSelection}`;
-            resultText.textContent= `Player: ${playRound()}`;
+            resultText.textContent= `Result: ${playRound(playerSelection, computerSelection)}`;
+
         }))
-        
-  // function returns button
 
         function getComputerChoice(){
             const randomNumber= Math.floor(Math.random()* 3);
 
                 if(randomNumber== 0){
-                    return "Rock"
+                    computerSelection= "Rock"
                 }
                 else if(randomNumber== 1){
-                    return "Paper"
+                    computerSelection= "Paper"
                 }
                 else if(randomNumber== 2){
-                    return "Scissors"
+                    computerSelection= "Scissors"
                 }
-
+                
             }
-
-            /*function getPlayerChoice(){
-            if(playerSelection= "rock"){
-                return "rock"
-            }
-            else if(playerSelection= "paper"){
-                return "paper"
-            }
-            else if(playerSelection= "scissors"){
-                return "scissors"
-            }
-        }*/
 
         function playRound(playerSelection, computerSelection){
-
-            const win= "You Win!"
-            const lose="Sorry, We Chose "+ getComputerChoice().charAt(0).toUpperCase() + getComputerChoice().slice(1)
+            const win= "You Win!"; 
+            const lose="Sorry, You Lost! " + computerSelection + " Beats " + playerSelection; 
             const tie= "Its a tie"
 
             if(playerSelection=="Rock"){
                 if(computerSelection=="Paper"){
                     return lose;
+                    computerScore++;
                 }
                 else if(computerSelection=="Scissors"){
                     return win;
+                    playerScore++;
                 }
                 else{
                     return tie;
@@ -86,9 +76,11 @@
             else if(playerSelection=="Paper"){
                 if(computerSelection=="Rock"){
                     return win;
+                    playerScore++;
                 }
                 else if(computerSelection=="Scissors"){
                     return lose;
+                    computerScore++;
                 }
                 else{
                     return tie;
@@ -97,25 +89,30 @@
             else if(playerSelection=="Scissors"){
                 if(computerSelection=="Rock"){
                     return lose;
+                    computerScore++;
                 }
                 else if(computerSelection=="Paper"){
                     return win;
+                    playerScore++;
                 }
                 else{
                     return tie;
                 }
             }
 }
-        /*function game(){
-            for(let i=0; i <5; i++){
-                if(play)
-            }
-           
-        }*/
+
+function game(){
+    if(playerScore===5){
+
+    }
+}
+
+
 console.log(choiceBtn)
 console.log(playerSelection)
 console.log(computerSelection)
 console.log(playRound(playerSelection, computerSelection));
+
     </script>
 </body>
 </html>
