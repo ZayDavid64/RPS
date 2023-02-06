@@ -1,0 +1,32 @@
+*{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+}
+
+html body{
+    background-color: black;
+}
+
+h3{
+    color: aqua;
+}
+
+h1, p{
+    color: aliceblue;
+}
+
+h3, h1, p{
+    padding-bottom: 20px;
+}
+
+button{
+    border: none;
+    background-color: #D3D3D3;
+    color:black
+}
+
+.choices{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
