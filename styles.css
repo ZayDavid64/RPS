@@ -1,9 +1,11 @@
 *{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
+   
 }
 
 html body{
+    
     background-color: black;
 }
 
@@ -25,8 +27,9 @@ button{
     color:black
 }
 
-.choices{
+#choices{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+

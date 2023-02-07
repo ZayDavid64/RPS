@@ -10,7 +10,6 @@ let playerText= document.querySelector("#playerText")
         let playerScore= parseInt(0);
         let computerScore= parseInt(0);
         let gameText=document.getElementById("gamer")
-        
 
         function getComputerChoice(){
             const randomNumber= Math.floor(Math.random()* 3);
